@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
+import MyComponent from "../components/Example/MyComponent";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
                 <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                     Learn React
                 </a>
+                <MyComponent />
             </header>
         </div>
     );
