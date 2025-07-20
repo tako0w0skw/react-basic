@@ -11,6 +11,11 @@ class MyComponent extends React.Component {
             age: event.target.value,
         });
     };
+
+    handleOnClickButton = () => {
+        console.log("Clicked!");
+        alert("Yay!! You clicked 🥳");
+    };
     render = () => {
         return (
             <>
@@ -18,6 +23,9 @@ class MyComponent extends React.Component {
                 <div className="second">
                     <input value={this.state.age} type="text" onChange={(event) => this.handleOnChangeAge(event)} /> I
                     am {this.state.age} years old.
+                </div>
+                <div className="third">
+                    <button onClick={() => this.handleOnClickButton()}>Click me</button>
                 </div>
             </>
         );
