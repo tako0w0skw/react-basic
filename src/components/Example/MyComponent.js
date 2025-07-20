@@ -2,34 +2,57 @@ import React from "react";
 
 class MyComponent extends React.Component {
     state = {
-        name: "Tako",
-        age: 22,
+        firstName: "Nhu",
+        lastName: "Chung Hue",
     };
 
-    handleOnChangeAge = (event) => {
+    handleOnChangeFirstName = (event) => {
         this.setState({
-            age: event.target.value,
+            firstName: event.target.value,
         });
     };
 
-    handleOnClickButton = () => {
-        console.log("Clicked!");
-        alert("Yay!! You clicked 🥳");
+    handleOnChangeLastName = (event) => {
+        this.setState({
+            lastName: event.target.value,
+        });
     };
-    render = () => {
+
+    handleOnClickSubmit = (event) => {
+        event.preventDefault();
+        console.log(">>> Check input data: ", this.state);
+    };
+
+    render() {
+        console.log(">>> Call render: ", this.state);
         return (
             <>
-                <div className="first">Hello World with MyComponent! My name is {this.state.name}</div>
-                <div className="second">
-                    <input value={this.state.age} type="text" onChange={(event) => this.handleOnChangeAge(event)} /> I
-                    am {this.state.age} years old.
-                </div>
-                <div className="third">
-                    <button onClick={() => this.handleOnClickButton()}>Click me</button>
-                </div>
+                <form>
+                    <label htmlFor="fname">First name:</label>
+                    <br />
+                    <input
+                        type="text"
+                        value={this.state.firstName}
+                        onChange={(event) => this.handleOnChangeFirstName(event)}
+                    />
+                    <br />
+                    <label htmlFor="lname">Last name:</label>
+                    <br />
+                    <input
+                        type="text"
+                        value={this.state.lastName}
+                        onChange={(event) => this.handleOnChangeLastName(event)}
+                    />
+                    <br />
+                    <input
+                        type="submit"
+                        value="Submit"
+                        onClick={(event) => this.handleOnClickSubmit(event)}
+                    />
+                </form>
             </>
         );
-    };
+    }
 }
 
 export default MyComponent;
