@@ -25,7 +25,7 @@ class MyComponent extends React.Component {
     };
 
     render() {
-        console.log(">>> Call render: ", this.state);
+        console.log(">>> Props: ", this.state);
         return (
             <>
                 <form>
@@ -51,9 +51,7 @@ class MyComponent extends React.Component {
                         onClick={(event) => this.handleOnClickSubmit(event)}
                     />
                 </form>
-                <ChildComponent name={"child one"} />
-                <ChildComponent name={"child two"} />
-                <ChildComponent name={"child three"} />
+                <ChildComponent name={"Hue Nhu"} age={"22"} />
             </>
         );
     }
