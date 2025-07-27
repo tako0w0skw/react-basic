@@ -35,6 +35,7 @@ class ChildComponent extends React.Component {
         let { arrJobs } = this.props;
         let { showJobs } = this.state;
         let checkShowJobs = showJobs ? "showJobs == true" : "showJobs == false";
+        // eslint-disable-next-line
         {
             console.log(">>> check showJobs: ", checkShowJobs);
         }
