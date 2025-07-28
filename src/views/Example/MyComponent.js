@@ -17,12 +17,20 @@ class MyComponent extends React.Component {
             arrJobs: [...this.state.arrJobs, job],
         });
     };
+
+    deleteJob = (job) => {
+        let currentJobs = this.state.arrJobs;
+        currentJobs = currentJobs.filter((item) => item.id !== job.id);
+        this.setState({
+            arrJobs: currentJobs,
+        });
+    };
     render() {
         console.log(">>> Props: ", this.state);
         return (
             <>
                 <AdđComponent addNewJob={this.addNewJob} />
-                <ChildComponent arrJobs={this.state.arrJobs} />
+                <ChildComponent arrJobs={this.state.arrJobs} deleteJob={this.deleteJob} />
             </>
         );
     }
