@@ -70,6 +70,7 @@ class ToDoList extends React.Component {
 
 		return (
 			<>
+				<p>Tako's To Do List</p>
 				<div className='list-todo-container'>
 					<AddTodo handleAddTodo={this.handleAddTodo} />
 					<div className='list-todo-content'>
