@@ -6,13 +6,13 @@ class AddTodo extends React.Component {
 		title: "",
 	};
 
-	addTodo = (item) => {
+	handleAddTodo = (item) => {
 		if (!item) {
 			toast.error("Please enter a todo item!");
 			return;
 		}
 
-		this.props.addTodo(item);
+		this.props.handleAddTodo(item);
 		toast.success("Todo added successfully! 🎉");
 
 		this.setState({
@@ -34,7 +34,7 @@ class AddTodo extends React.Component {
 					type='text'
 					value={this.state.title}
 				/>
-				<button onClick={() => this.addTodo(title)} className='btn-add' type='button'>
+				<button onClick={() => this.handleAddTodo(title)} className='btn-add' type='button'>
 					Add
 				</button>
 			</div>
