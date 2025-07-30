@@ -1,22 +1,24 @@
 import React from "react";
-// import { withRouter } from "react-router-dom";
 import Color from "../HOC/Color";
-import { withRouter } from "react-router-dom";
+import photo from "../../assets/image/keke_cat.png";
+import "./Home.scss";
 
 class Home extends React.Component {
 	state = {};
-	// componentDidMount() {
-	// 	setTimeout(() => {
-	// 		this.props.history.push("/todos");
-	// 	}, 3000);
-	// }
+
 	render() {
 		{
 			console.log(this.props);
 		}
-		return <div>Hello World From Home Page With Tako</div>;
+		return (
+			<>
+				<div>Hello World From Home Page With Tako</div>
+				<div className='image'>
+					<img src={photo} />
+				</div>
+			</>
+		);
 	}
 }
 
-// export default withRouter(Home);
 export default Color(Home);
