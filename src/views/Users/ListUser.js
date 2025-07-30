@@ -8,8 +8,13 @@ class ListUser extends React.Component {
 	};
 
 	async componentDidMount() {
-		let res = await axios.get("https://jsonplaceholder.typicode.com/users");
-		let data = res && res.data ? res.data : [];
+		let res = await axios.get("https://reqres.in/api/users", {
+			headers: {
+				"x-api-key": "reqres-free-v1",
+			},
+		});
+		// let res = await axios.get("https://jsonplaceholder.typicode.com/users");
+		let data = res && res.data && res.data.data ? res.data.data : [];
 		this.setState({
 			listUser: data,
 		});
@@ -25,7 +30,7 @@ class ListUser extends React.Component {
 						listUser.map((item, index) => {
 							return (
 								<div className='child' key={item.id}>
-									{index + 1} - {item.name}
+									{index + 1} - {item.first_name} {item.last_name}
 								</div>
 							);
 						})}
