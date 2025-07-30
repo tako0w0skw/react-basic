@@ -7,6 +7,7 @@ import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MyComponent from "./Example/MyComponent";
+import ListUser from "./Users/ListUser";
 
 function App() {
 	return (
@@ -17,11 +18,14 @@ function App() {
 					<img src={logo} className='App-logo' alt='logo' />
 					<Switch>
 						<Route path='/' exact component={Home}></Route>
-						<Route path='/todos'>
+						<Route path='/todo'>
 							<ToDoList />
 						</Route>
 						<Route path='/about'>
 							<MyComponent />
+						</Route>
+						<Route path='/user'>
+							<ListUser />
 						</Route>
 					</Switch>
 				</header>
