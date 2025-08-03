@@ -18,7 +18,9 @@ function App() {
 					<Nav />
 					<img src={logo} className='App-logo' alt='logo' />
 					<Switch>
-						<Route path='/' exact component={Home}></Route>
+						<Route path='/' exact>
+							<Home />
+						</Route>
 						<Route path='/todo'>
 							<ToDoList />
 						</Route>
