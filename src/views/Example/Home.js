@@ -2,13 +2,14 @@ import React from "react";
 import Color from "../HOC/Color";
 import photo from "../../assets/image/keke_cat.png";
 import "./Home.scss";
+import { connect } from "react-redux";
 
 class Home extends React.Component {
 	state = {};
 
 	render() {
 		{
-			console.log(this.props);
+			console.log(">>> check props: ", this.props);
 		}
 		return (
 			<>
@@ -21,4 +22,8 @@ class Home extends React.Component {
 	}
 }
 
-export default Color(Home);
+const mapStateToProps = (state) => {
+	return { dataRedux: state.users };
+};
+
+export default connect(mapStateToProps)(Color(Home));
